@@ -1,18 +1,35 @@
-export default function EfesoOneLandingRefined() {
-  const whatsapp = "https://wa.me/5575991897547?text=Olá!+Vim+pelo+site+da+Éfeso+One+e+quero+saber+mais+sobre+as+soluções+em+Inteligência+Artificial.";
-  const year = new Date().getFullYear();
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Éfeso One",
-    url: "https://efeso1.com.br",
-    logo: "/favicon.svg",
-    sameAs: ["https://www.instagram.com/"],
-    slogan: "Integrar. Simplificar. Evoluir.",
-    description:
-      "Soluções práticas de Inteligência Artificial: automações, atendentes virtuais, análise de dados e integrações para empresas.",
-  };
+const WHATSAPP_URL = "https://wa.me/5575991897547?text=Olá!+Vim+pelo+site+da+Éfeso+One+e+quero+saber+mais+sobre+as+soluções+em+Inteligência+Artificial.";
 
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Éfeso One",
+  url: "https://efeso1.com.br",
+  logo: "/favicon.svg",
+  sameAs: ["https://www.instagram.com/"],
+  slogan: "Integrar. Simplificar. Evoluir.",
+  description:
+    "Soluções práticas de Inteligência Artificial: automações, atendentes virtuais, análise de dados e integrações para empresas.",
+};
+
+const SOLUTIONS = [
+  {title: 'Atendentes virtuais (WhatsApp / Instagram / Web)', desc: 'Qualificação de leads, agendamentos, respostas e integrações com CRM.'},
+  {title: 'Automação de processos', desc: 'Robôs executam tarefas repetitivas, reduzem custos e erros.'},
+  {title: 'Análise e relatórios inteligentes', desc: 'Dashboards com insights automáticos para decisões rápidas.'},
+  {title: 'IA treinada com seus documentos', desc: 'Assistentes com a sua base: políticas, PDFs, FAQ e conhecimento interno.'},
+  {title: 'Integrações', desc: 'ERP, CRM, Google Sheets, APIs e Webhooks numa mesma camada.'},
+  {title: 'Consultoria & implantação', desc: 'Descobrimos oportunidades e entregamos um plano de ROI.'},
+];
+
+const HOW_IT_WORKS = [
+  {step: '1. Diagnóstico', desc: 'Reunião de 20–30min para mapear processos, dados e metas.'},
+  {step: '2. Piloto', desc: 'Implantação enxuta em 2–4 semanas para provar valor.'},
+  {step: '3. Escala', desc: 'Integrações, monitoração e suporte humano contínuo.'},
+];
+
+const CURRENT_YEAR = new Date().getFullYear();
+
+export default function EfesoOneLandingRefined() {
   return (
     <div className="min-h-screen bg-[#0f0f10] text-zinc-100 selection:bg-[#c6a661]/30">
       <div className="hidden" dangerouslySetInnerHTML={{
