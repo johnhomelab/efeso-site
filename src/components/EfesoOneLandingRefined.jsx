@@ -33,7 +33,7 @@ export default function EfesoOneLandingRefined() {
   return (
     <div className="min-h-screen bg-[#0f0f10] text-zinc-100 selection:bg-[#c6a661]/30">
       <div className="hidden" dangerouslySetInnerHTML={{
-        __html: `<script type="application/ld+json">${JSON.stringify(JSON_LD)}</script>`,
+        __html: `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
       }} />
 
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-white/5">
@@ -54,7 +54,7 @@ export default function EfesoOneLandingRefined() {
             <a href="#faq" className="hover:text-[#c6a661]">FAQ</a>
             <a href="#contact" className="hover:text-[#c6a661]">Contato</a>
           </nav>
-          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp" className="inline-flex items-center gap-2 rounded-2xl bg-[#c6a661] px-4 py-2 text-[#1e1e1e] font-medium shadow-[0_10px_30px_rgba(198,166,97,0.35)] hover:brightness-110">
+          <a href={whatsapp} target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp" className="inline-flex items-center gap-2 rounded-2xl bg-[#c6a661] px-4 py-2 text-[#1e1e1e] font-medium shadow-[0_10px_30px_rgba(198,166,97,0.35)] hover:brightness-110">
             Falar no WhatsApp
           </a>
         </div>
@@ -73,7 +73,7 @@ export default function EfesoOneLandingRefined() {
               Comece com um piloto rápido e veja ROI em semanas.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold hover:brightness-110 shadow-[0_10px_30px_rgba(198,166,97,0.35)]">Solicitar diagnóstico gratuito</a>
+              <a href={whatsapp} target="_blank" rel="noreferrer" className="rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold hover:brightness-110 shadow-[0_10px_30px_rgba(198,166,97,0.35)]">Solicitar diagnóstico gratuito</a>
               <a href="#solutions" className="rounded-2xl px-6 py-3 border border-white/10 hover:border-[#c6a661]">Ver soluções</a>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-5 text-xs text-zinc-400">
@@ -109,7 +109,14 @@ export default function EfesoOneLandingRefined() {
         <h2 className="text-2xl md:text-3xl font-semibold">Soluções de IA</h2>
         <p className="mt-2 text-zinc-400 max-w-2xl">Comece por onde dói mais. Nossos módulos são independentes e integráveis.</p>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
-          {SOLUTIONS.map((card, i) => (
+          {[
+            {title: 'Atendentes virtuais (WhatsApp / Instagram / Web)', desc: 'Qualificação de leads, agendamentos, respostas e integrações com CRM.'},
+            {title: 'Automação de processos', desc: 'Robôs executam tarefas repetitivas, reduzem custos e erros.'},
+            {title: 'Análise e relatórios inteligentes', desc: 'Dashboards com insights automáticos para decisões rápidas.'},
+            {title: 'IA treinada com seus documentos', desc: 'Assistentes com a sua base: políticas, PDFs, FAQ e conhecimento interno.'},
+            {title: 'Integrações', desc: 'ERP, CRM, Google Sheets, APIs e Webhooks numa mesma camada.'},
+            {title: 'Consultoria & implantação', desc: 'Descobrimos oportunidades e entregamos um plano de ROI.'},
+          ].map((card, i) => (
             <div key={i} className="rounded-2xl border border-white/10 p-6 bg-gradient-to-b from-white/0 to-white/[0.02] hover:border-[#c6a661]/50 transition">
               <h3 className="text-lg font-semibold text-zinc-100">{card.title}</h3>
               <p className="mt-2 text-sm text-zinc-400">{card.desc}</p>
@@ -121,7 +128,11 @@ export default function EfesoOneLandingRefined() {
       <section id="how" className="mx-auto max-w-7xl px-6 py-16 border-t border-white/5">
         <h2 className="text-2xl md:text-3xl font-semibold">Como funciona</h2>
         <div className="mt-10 grid md:grid-cols-3 gap-6 text-sm">
-          {HOW_IT_WORKS.map((s, i) => (
+          {[
+            {step: '1. Diagnóstico', desc: 'Reunião de 20–30min para mapear processos, dados e metas.'},
+            {step: '2. Piloto', desc: 'Implantação enxuta em 2–4 semanas para provar valor.'},
+            {step: '3. Escala', desc: 'Integrações, monitoração e suporte humano contínuo.'},
+          ].map((s, i) => (
             <div key={i} className="rounded-2xl border border-white/10 p-6">
               <p className="text-[#c6a661] font-semibold">{s.step}</p>
               <p className="mt-2 text-zinc-300">{s.desc}</p>
@@ -180,12 +191,12 @@ export default function EfesoOneLandingRefined() {
             <p className="mt-2 text-zinc-400">Fale com um especialista agora e receba um plano de implantação.</p>
           </div>
           <div className="flex md:justify-end">
-            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold hover:brightness-110">
+            <a href={whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold hover:brightness-110">
               Falar no WhatsApp
             </a>
           </div>
         </div>
-        <div className="text-center text-xs text-zinc-500 pb-8">© {CURRENT_YEAR} Éfeso One. Todos os direitos reservados.</div>
+        <div className="text-center text-xs text-zinc-500 pb-8">© {year} Éfeso One. Todos os direitos reservados.</div>
       </footer>
     </div>
   );
