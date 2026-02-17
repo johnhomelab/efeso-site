@@ -25,11 +25,25 @@ describe('EfesoOneLandingRefined Navigation Links', () => {
     expect(content).toMatch(/<a href="#top"/);
   });
 
-  test('all links with target="_blank" must have rel="noopener noreferrer"', () => {
-    // This regex finds all <a> tags with target="_blank"
-    const linksWithTargetBlank = content.match(/<a[^>]*target="_blank"[^>]*>/g) || [];
+  test('uses the correct constant for JSON-LD', () => {
+    expect(content).toMatch(/\$\{JSON\.stringify\(JSON_LD\)\}/);
+    expect(content).not.toMatch(/\$\{JSON\.stringify\(jsonLd\)\}/);
+  });
 
-    linksWithTargetBlank.forEach(link => {
+  test('uses WHATSAPP_URL for all WhatsApp links', () => {
+    // Check that WHATSAPP_URL is used in href
+    expect(content).toMatch(/href=\{WHATSAPP_URL\}/);
+    expect(content).not.toMatch(/href=\{whatsapp\}/);
+  });
+
+  test('uses CURRENT_YEAR for the copyright notice', () => {
+    expect(content).toMatch(/© \{CURRENT_YEAR\}/);
+    expect(content).not.toMatch(/© \{year\}/);
+  });
+
+  test('all external links have rel="noopener noreferrer"', () => {
+    const externalLinks = content.match(/<a[^>]*target="_blank"[^>]*>/g);
+    externalLinks.forEach(link => {
       expect(link).toMatch(/rel="noopener noreferrer"/);
     });
   });

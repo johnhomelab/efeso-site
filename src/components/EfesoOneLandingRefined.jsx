@@ -35,7 +35,7 @@ export default function EfesoOneLandingRefined() {
   return (
     <div className="min-h-screen bg-[#0f0f10] text-zinc-100 selection:bg-[#c6a661]/30">
       <div className="hidden" dangerouslySetInnerHTML={{
-        __html: `<script type="application/ld+json">${JSON_LD_STRING}</script>`,
+        __html: `<script type="application/ld+json">${JSON.stringify(JSON_LD)}</script>`,
       }} />
 
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-white/5">
