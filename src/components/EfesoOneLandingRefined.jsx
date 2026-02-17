@@ -33,7 +33,7 @@ export default function EfesoOneLandingRefined() {
   return (
     <div className="min-h-screen bg-[#0f0f10] text-zinc-100 selection:bg-[#c6a661]/30">
       <div className="hidden" dangerouslySetInnerHTML={{
-        __html: `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
+        __html: `<script type="application/ld+json">${JSON.stringify(JSON_LD)}</script>`,
       }} />
 
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-white/5">
@@ -54,7 +54,7 @@ export default function EfesoOneLandingRefined() {
             <a href="#faq" className="hover:text-[#c6a661]">FAQ</a>
             <a href="#contact" className="hover:text-[#c6a661]">Contato</a>
           </nav>
-          <a href={whatsapp} target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp" className="inline-flex items-center gap-2 rounded-2xl bg-[#c6a661] px-4 py-2 text-[#1e1e1e] font-medium shadow-[0_10px_30px_rgba(198,166,97,0.35)] hover:brightness-110">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" className="inline-flex items-center gap-2 rounded-2xl bg-[#c6a661] px-4 py-2 text-[#1e1e1e] font-medium shadow-[0_10px_30px_rgba(198,166,97,0.35)] hover:brightness-110">
             Falar no WhatsApp
           </a>
         </div>
@@ -73,7 +73,7 @@ export default function EfesoOneLandingRefined() {
               Comece com um piloto rápido e veja ROI em semanas.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href={whatsapp} target="_blank" rel="noreferrer" className="rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold hover:brightness-110 shadow-[0_10px_30px_rgba(198,166,97,0.35)]">Solicitar diagnóstico gratuito</a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold hover:brightness-110 shadow-[0_10px_30px_rgba(198,166,97,0.35)]">Solicitar diagnóstico gratuito</a>
               <a href="#solutions" className="rounded-2xl px-6 py-3 border border-white/10 hover:border-[#c6a661]">Ver soluções</a>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-5 text-xs text-zinc-400">
@@ -191,12 +191,12 @@ export default function EfesoOneLandingRefined() {
             <p className="mt-2 text-zinc-400">Fale com um especialista agora e receba um plano de implantação.</p>
           </div>
           <div className="flex md:justify-end">
-            <a href={whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold hover:brightness-110">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold hover:brightness-110">
               Falar no WhatsApp
             </a>
           </div>
         </div>
-        <div className="text-center text-xs text-zinc-500 pb-8">© {year} Éfeso One. Todos os direitos reservados.</div>
+        <div className="text-center text-xs text-zinc-500 pb-8">© {CURRENT_YEAR} Éfeso One. Todos os direitos reservados.</div>
       </footer>
     </div>
   );
