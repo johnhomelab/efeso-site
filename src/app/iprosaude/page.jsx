@@ -13,7 +13,7 @@ export default function IPROSaudePage() {
           Atendentes virtuais no WhatsApp, automação de confirmação de consultas, integração com planilhas e relatórios inteligentes.
         </p>
         <div className="mt-8 flex gap-4">
-          <a href={whatsapp} target="_blank" className="rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold shadow-[0_10px_30px_rgba(198,166,97,0.35)]">
+          <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-[#c6a661] px-6 py-3 text-[#1e1e1e] font-semibold shadow-[0_10px_30px_rgba(198,166,97,0.35)]">
             Falar com especialista
           </a>
           <a href="/#solutions" className="rounded-2xl px-6 py-3 border border-white/10 hover:border-[#c6a661]">
