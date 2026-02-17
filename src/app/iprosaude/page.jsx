@@ -3,6 +3,12 @@ export const metadata = {
   description: "Atendentes virtuais, automação de agendamentos, análise de dados e integrações para clínicas.",
 };
 
+const SOLUTIONS_IPRO = [
+  {t: "Bot de triagem 24/7", d: "Responde dúvidas, coleta dados e encaminha urgências."},
+  {t: "Agendamentos automáticos", d: "Integração com agenda; confirmações e lembretes."},
+  {t: "Relatórios de produção", d: "Indicadores semanais e insights em um clique."},
+];
+
 export default function IPROSaudePage() {
   const whatsapp = "https://wa.me/5575991897547?text=Olá!+Sou+da+IPRO+Saúde+e+quero+conversar+sobre+IA+para+clínicas.";
   return (
@@ -21,11 +27,7 @@ export default function IPROSaudePage() {
           </a>
         </div>
         <div className="mt-12 grid md:grid-cols-3 gap-6">
-          {[
-            {t: "Bot de triagem 24/7", d: "Responde dúvidas, coleta dados e encaminha urgências."},
-            {t: "Agendamentos automáticos", d: "Integração com agenda; confirmações e lembretes."},
-            {t: "Relatórios de produção", d: "Indicadores semanais e insights em um clique."},
-          ].map((c, i) => (
+          {SOLUTIONS_IPRO.map((c, i) => (
             <div key={i} className="p-6 rounded-2xl border border-white/10 bg-gradient-to-b from-white/0 to-white/[0.02]">
               <p className="text-lg font-semibold">{c.t}</p>
               <p className="text-sm text-zinc-400 mt-2">{c.d}</p>
